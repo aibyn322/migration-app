@@ -9,7 +9,7 @@
     
     <?php 
     $db_host = getenv('DB_HOST') ?: 'localhost';
-    $db_name = getenv('DB_NAME') ?: 'migration_lab';
+    $db_name = getenv('DB_NAME') ?: 'migration_lab'; 
     $db_user = getenv('DB_USER') ?: 'admin';
     $db_pass = getenv('DB_PASS') ?: '12345678';
 
