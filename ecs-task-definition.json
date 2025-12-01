@@ -1,0 +1,27 @@
+{
+  "family": "migration-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "executionRoleArn": "arn:aws:iam::953331331294:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "migration-container",
+      "image": "<to-be-replaced-by-github>",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        { "name": "DB_HOST", "value": "migrationdb1.cls8uwwg4v60.eu-central-1.rds.amazonaws.com" },
+        { "name": "DB_NAME", "value": "migration_lab" },
+        { "name": "DB_USER", "value": "admin" },
+        { "name": "DB_PASS", "value": "12345678" }
+      ],
+      "essential": true
+    }
+  ]
+}
